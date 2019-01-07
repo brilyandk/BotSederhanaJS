@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script>
+            clue = {
+                "halo" : "hi",
+                "apa kabar?" : "baik",
+                "ok" : ":)"
+            };
+            function talk() {
+                var user = document.getElementById("userBox").value;
+                document.getElementById("userBox").value = "";
+                document.getElementById("chatLog").innerHTML += user+"<br>";
+                if (user in clue) {
+                    document.getElementById("chatLog").innerHTML += clue[user]+"<br>";
+                } else {
+                    document.getElementById("chatLog").innerHTML += "Ga paham :( <br>";
+                }
+            } 
+        </script>
+    </head>
+    <body>
+        <p id="chatLog">- - C H A T BOT - -<br></p>
+        <input id="userBox" type="text" onkeydown="if (event.keyCode == 13) {talk()}">
+    </body>
+</html>
